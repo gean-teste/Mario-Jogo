@@ -1,0 +1,860 @@
+/* Estilo geral do Home */
+@font-face {
+  font-family: 'JoystixMonospace';
+  src: url('../fonts/joystix%20monospace.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.home-board {
+  width: 100%;
+  height: 100vh;
+  border-bottom: 25px solid rgb(35, 160, 35);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.clouds {
+  position: absolute;
+  width: 550px;
+  animation: clouds-animation 20s infinite linear;
+}
+
+.pipe-static {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80px; /* Ajuste o tamanho do cano conforme necessário */
+}
+
+.home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.welcome-text {
+  font-family: 'JoystixMonospace', sans-serif;
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.play-button {
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background-color: #ff6347;
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.play-button:hover {
+  background-color: #ff4500;
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+  .home-board {
+    border-bottom-width: 15px; /* Ajusta a borda inferior para telas menores */
+  }
+
+  .clouds {
+    width: 300px; /* Reduz o tamanho das nuvens em telas menores */
+  }
+
+  .pipe-static {
+    left: 5%;
+    width: 60px; /* Reduz o tamanho do cano em telas menores */
+  }
+
+  .home-content {
+    top: 40%; /* Ajusta a posição do conteúdo */
+  }
+
+  .welcome-text {
+    font-size: 24px; /* Reduz o tamanho da fonte do texto de boas-vindas */
+  }
+
+  .play-button {
+    padding: 8px 16px;
+    font-size: 20px; /* Reduz o tamanho do botão */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-board {
+    border-bottom-width: 10px; /* Ajusta a borda inferior para telas muito pequenas */
+  }
+
+  .clouds {
+    width: 200px; /* Reduz ainda mais o tamanho das nuvens */
+  }
+
+  .pipe-static {
+    left: 5%;
+    width: 50px; /* Reduz ainda mais o tamanho do cano */
+  }
+
+  .home-content {
+    top: 35%; /* Ajusta a posição do conteúdo para telas muito pequenas */
+  }
+
+  .welcome-text {
+    font-size: 20px; /* Reduz ainda mais o tamanho da fonte do texto de boas-vindas */
+  }
+
+  .play-button {
+    padding: 6px 12px;
+    font-size: 18px; /* Reduz ainda mais o tamanho do botão */
+  }
+}
+
+.logo {
+  width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+  margin-bottom: 20px; /* Espaço abaixo da logo */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 120px; /* Reduz o tamanho da logo em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 100px; /* Reduz ainda mais o tamanho da logo em telas muito pequenas */
+  }
+}
+
+/* Botão de Login */
+.login-button {
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background-color: #1e90ff;
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.login-button:hover {
+  background-color: #1c86ee;
+}
+
+/* Estilo da modal de fundo */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Estilo da modal de conteúdo */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 300px;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content .auth-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+}
+
+.modal-content .auth-button:hover {
+  background-color: #45a049;
+}
+
+.modal-content p {
+  margin-top: 10px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.modal-content p:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para o botão "Rank" */
+.rank-button {
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background-color: #800080; /* Cor roxa */
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.rank-button:hover {
+  background-color: #9932cc; /* Cor roxa mais clara ao passar o mouse */
+}
+
+/* Estilos para os botões existentes, se necessário ajustar */
+.play-button, .login-button, .rank-button {
+  width: 150px; /* Ajuste conforme necessário */
+  height: 50px;
+  margin: 0 10px;
+}
+
+/* Estilos para o botão "Loja" */
+.shop-button {
+  width: calc(3 * 150px + 2 * 10px); /* Largura total dos três botões e suas margens */
+  height: 50px; /* Mesma altura dos outros botões */
+  font-size: 18px; /* Tamanho da fonte ajustado conforme a altura */
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 20px auto 0; /* Margem para centralizar e espaçar do conteúdo acima */
+  background-image: url('../images/shop-background.png'); /* Caminho para a imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.shop-button::before {
+  content: 'Loja';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 18px; /* Ajustar tamanho da fonte para se adequar à altura */
+  z-index: 1;
+}
+
+.shop-button:hover::before {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.avatar-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px; /* Adiciona espaço abaixo da seleção de avatar */
+}
+
+.avatar-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  margin: 0 10px;
+}
+
+.avatar-selection button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.user-info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(71, 160, 243, 0.541);
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.profile-modal {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 300px;
+  background: linear-gradient(to right, #00c6ff, #fffc00);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-username {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-bio {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.profile-save-button,
+.profile-close-button {
+  width: 100px;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-save-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.profile-close-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.rank-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rank-table th, .rank-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.rank-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.rank-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.rank-table tr:hover {
+  background-color: #ddd;
+}
+
+.rank-modal {
+  width: 80%; /* Aumenta a largura da modal */
+  max-width: 800px; /* Define uma largura máxima */
+  max-height: 80vh; /* Limita a altura da modal */
+  overflow: auto; /* Adiciona barra de rolagem */
+}
+
+.rank-table-wrapper {
+  max-height: 60vh; /* Limita a altura da tabela dentro da modal */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical */
+}
+
+.verified-badge {
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-lg .modal-content {
+  width: 90%; /* Ajuste a largura conforme necessário */
+  max-width: none; /* Permite que a largura personalizada funcione */
+}
+
+.shop-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shop-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.shop-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+}
+
+.shop-description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.shop-card .btn {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.shop-card .btn:hover {
+  background-color: #45a049;
+}
+
+.modal-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-footer .btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #e53935;
+}
+
+.modal-footer .btn-primary {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #45a049;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modal-lg .modal-content {
+    padding: 20px;
+  }
+
+  .shop-card {
+    margin-bottom: 20px;
+  }
+
+  .shop-card img {
+    height: 120px;
+  }
+
+  .shop-title {
+    font-size: 20px;
+  }
+
+  .shop-description {
+    font-size: 12px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.modal-xl .modal-content {
+  width: 95%; /* Ajuste a largura conforme necessário */
+  max-width: none; /* Permite que a largura personalizada funcione */
+  height: 85vh; /* Ajuste a altura conforme necessário */
+  overflow: auto; /* Adiciona barra de rolagem se necessário */
+}
+
+.card {
+  margin-bottom: 20px;
+  overflow: hidden; /* Garante que o conteúdo não saia do card */
+}
+
+@media (max-width: 992px) {
+  .modal-xl .modal-content {
+    width: 100%; /* Largura total para dispositivos menores */
+    height: 100vh; /* Altura total para dispositivos menores */
+    padding: 10px; /* Adiciona espaço interno para evitar corte */
+  }
+
+  .modal-xl .modal-body {
+    padding: 10px; /* Adiciona espaço interno para o corpo da modal */
+  }
+
+  .card {
+    margin-bottom: 10px; /* Reduz o espaço entre os cards em dispositivos menores */
+  }
+
+  .card-body {
+    padding: 10px; /* Reduz o padding dos cards em dispositivos menores */
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-xl .modal-content {
+    padding: 5px; /* Reduz ainda mais o padding em dispositivos menores */
+  }
+
+  .card {
+    margin-bottom: 5px; /* Reduz o espaço entre os cards em dispositivos menores */
+  }
+}
+
+/* .user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+} */
+
+.transaction-history {
+  list-style-type: none;
+  padding: 0;
+  max-height: 300px; /* Defina a altura máxima para o histórico de transações */
+  overflow-y: auto; /* Adicione a barra de rolagem vertical */
+}
+
+.transaction {
+  margin-bottom: 10px;
+}
+
+.transaction.received {
+  color: green;
+}
+
+.transaction.sent {
+  color: red;
+}
+
+.modal-sm .modal-content {
+  width: 300px; /* Ajuste a largura conforme necessário */
+  max-width: none; /* Permite que a largura personalizada funcione */
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.lock-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.lock-image {
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px;
+}
+
+.bank-button {
+  width: calc(3 * 150px + 2 * 10px); /* Largura total dos três botões e suas margens */
+  height: 50px; /* Mesma altura dos outros botões */
+  font-size: 18px; /* Tamanho da fonte ajustado conforme a altura */
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 20px auto 0; /* Margem para centralizar e espaçar do conteúdo acima */
+  background-color: #FFD700; /* Cor de fundo para o botão Bank */
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.bank-button:hover {
+  background-color: #FFC107; /* Cor ao passar o mouse */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.notification-dot {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: #00ff00; /* Cor verde */
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+.modal-lg .modal-content {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  font-family: 'JoystixMonospace', sans-serif;
+  font-size: 24px;
+  color: #333;
+}
+
+.carousel .carousel-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel .carousel-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.shop-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shop-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  border-radius: 10px 10px 0 0;
+}
+
+.shop-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+}
+
+.shop-description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.shop-card .btn {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.shop-card .btn:hover {
+  background-color: #45a049;
+}
+
+.inventory {
+  margin-top: 20px;
+}
+
+.inventory h5 {
+  font-family: 'JoystixMonospace', sans-serif;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.inventory .card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inventory .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.inventory .card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.inventory .card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modal-lg .modal-content {
+    padding: 15px;
+  }
+
+  .carousel .carousel-item {
+    padding: 10px;
+  }
+
+  .inventory .card img {
+    height: 80px;
+  }
+
+  .shop-card img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-lg .modal-content {
+    padding: 10px;
+  }
+
+  .shop-card img {
+    height: 100px;
+  }
+
+  .inventory .card img {
+    height: 60px;
+  }
+
+  .shop-title {
+    font-size: 18px;
+  }
+}
